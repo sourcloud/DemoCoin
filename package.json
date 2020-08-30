@@ -1,0 +1,26 @@
+{
+  "name": "DemoCoin",
+  "version": "1.0.0",
+  "description": "I will try to implement a blockchain for learning purposes and better understanding of the concept.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourcloud/DemoCoin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sourcloud/DemoCoin/issues"
+  },
+  "homepage": "https://github.com/sourcloud/DemoCoin#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
+  }
+}
