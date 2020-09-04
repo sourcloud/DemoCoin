@@ -1,4 +1,4 @@
-const Hash = require('../src/hash');
+const Hash = require('./hash');
 
 describe('createSHA256()', () => {
 
