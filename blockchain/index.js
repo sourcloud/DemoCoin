@@ -1,5 +1,5 @@
 const Block = require('./block');
-const Hash = require('../util/hash')
+const { Hash } = require('../util')
 
 class Blockchain {
 
@@ -22,7 +22,7 @@ class Blockchain {
             return;
         }
 
-        console.log('Replaced with',chain);
+        console.log('Replaced with', chain);
         this.chain = chain;
     }
 

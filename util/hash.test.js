@@ -2,16 +2,24 @@ const Hash = require('./hash');
 
 describe('createSHA256()', () => {
 
-    const helloWorldHash = 'a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e';
     const normalOrderHash = Hash.createSHA256('Hello', 'World');
-    const differentOrderHash = Hash.createSHA256('World', 'Hello');
 
     it('generates a valid SHA256 hash', () => {
+        const helloWorldHash = '72b81d30128ae192ca5f49eb111299f6dcee4ba8328a6eb28aebd46a1cb169b3';
         expect(normalOrderHash).toEqual(helloWorldHash);
     });
 
     it('produces the same hash with the same input arguments in any order', () => {
+        const differentOrderHash = Hash.createSHA256('World', 'Hello');
         expect(normalOrderHash).toEqual(differentOrderHash);
+    });
+
+    it('produces a unique hash if properties have changed on an input', () => {
+        const testObject = {};
+        const originalHash = Hash.createSHA256(testObject);
+        testObject['test'] = 'test';
+        const changedHash = Hash.createSHA256(testObject);
+        expect(originalHash).not.toEqual(changedHash);
     });
 
 });
